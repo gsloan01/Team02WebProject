@@ -7,5 +7,8 @@ namespace MTGDeckBuilder.Models
 {
     public class Library
     {
+        List<Deck> decks;
+        int numOfDecks;
+
     }
 }

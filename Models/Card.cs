@@ -7,11 +7,11 @@ namespace MTGDeckBuilder.Models
 {
     public class Card
     {
-        enum eKeyword
+        public enum eKeyword
         { }
-        enum eType
+        public enum eType
         { }
-        enum eColor
+        public enum eColor
         { }
 
 
