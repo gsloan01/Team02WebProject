@@ -15,14 +15,27 @@ namespace MTGDeckBuilder.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Information about the deck of cards.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Deck()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Decks of cards.";
+
+            return View();
+        }
+
+        public ActionResult Library()
+        {
+            ViewBag.Message = "Library of cards.";
+
+            return View();
+        }
+        public ActionResult Info()
+        {
+            ViewBag.Message = "Information regarding rules and other info.";
 
             return View();
         }
