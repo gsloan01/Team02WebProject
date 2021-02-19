@@ -39,5 +39,19 @@ namespace MTGDeckBuilder.Controllers
 
             return View();
         }
+
+        public ActionResult SignUp()
+        {
+            ViewBag.Message = "Sign up.";
+
+            return View();
+        }
+
+        public ActionResult LogIn()
+        {
+            ViewBag.Message = "Log in.";
+
+            return View();
+        }
     }
 }
