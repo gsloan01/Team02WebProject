@@ -37,4 +37,13 @@
 
 <p>Description</p>
 
-<a href="https://localhost:44334/Home/LogIn">Log In</a> / <a href="https://localhost:44334/Home/SignUp">Sign Up</a>
+@if (Session["Id"] != null)
+{
+    <p style="display: inline; color: white">Hello, @Session["Username"].ToString()</p>
+    <a href="https://localhost:44334/Home/SignOut">Log Out</a>
+}
+else
+{
+
+    <a href="https://localhost:44334/Home/LogIn">Log In</a> <p style="display:inline; color:white">/</p> <a href="https://localhost:44334/Home/SignUp">Sign Up</a>
+}

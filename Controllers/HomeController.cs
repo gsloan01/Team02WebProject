@@ -88,6 +88,46 @@ namespace MTGDeckBuilder.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string username, string password)
+        {
+            if (ModelState.IsValid)
+            {
+
+
+                var f_password = GetMD5(password);
+                var data = db.Users.Where(s => s.Username.Equals(username) && s.Password.Equals(f_password)).ToList();
+                if (data.Count() > 0)
+                {
+                    //add session
+                    Session["Username"] = data.FirstOrDefault().Username;
+                    Session["Id"] = data.FirstOrDefault().Id;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.error = "Login failed";
+                    return RedirectToAction("Login");
+                }
+            }
+            return View();
+        }
+
+        public ActionResult SignOut()
+        {
+            ViewBag.Message = "Sign Out.";
+
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
+        }
+
+
         public static string GetMD5(string str)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
