@@ -2,8 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<h1>Magic Deck Builder</h1>
 
+<h1>Magic Deck Builder</h1>
+<div class="welcome_container">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -13,7 +14,7 @@
 
     <div class="carousel-inner">
         <div class="item active">
-            <img src="~/Models/Images/23b01c1e3037bd2e5edf222232869b7c.jpg" alt="one">
+            <img src="~/Models/Images/Magic-Gathering-Amonkhet-Merciless-Eternal.jpg" alt="one">
             <div class="carousel-caption">
                 <h3>Test</h3>
                 <p>One</p>
@@ -46,6 +47,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+
 <br>
 
 <div style="text-align:center">
@@ -54,6 +56,39 @@
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
-<p>Description</p>
+<div id="divID" class="welcome_box">
+    <div class="welcome_block_container">
+        <div class="three_block">
+            <h3>Build Decks</h3>
+            <a href="@Url.Action("Deck")">
+                <img src="~/Models/Images/Sram.jpg" class="three_block_img" />
+            </a>
+            <p>Start Build you own deck</p>
+        </div>
+    </div>
 
-<a href="https://localhost:44334/Home/LogIn">Log In</a> / <a href="https://localhost:44334/Home/SignUp">Sign Up</a>
+    <div class="welcome_block_container">
+        <div class="three_block">
+            <h3>About</h3>
+            <a href="@Url.Action("About")">
+                <img src="~/Models/Images/image-asset.jpeg" class="three_block_img" />
+            </a>
+            <p>New to the Game? Learn more Here</p>
+        </div>
+    </div>
+
+    <div class="welcome_block_container">
+        <div class="three_block">
+            <h3>Library</h3>
+            <a href="@Url.Action("Deck")">
+                <img src="~/Models/Images/Cogwork.jpg" class="three_block_img" />
+            </a>
+            <p>Check Out the Library</p>
+        </div>
+    </div>
+
+</div>
+
+    <a href="https://localhost:44334/Home/LogIn">Log In</a> / <a href="https://localhost:44334/Home/SignUp">Sign Up</a>
+</div>
+
