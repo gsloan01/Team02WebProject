@@ -1,15 +1,35 @@
-﻿@{
+﻿@model MTGDeckBuilder.Models.User
+
+@{
+    ViewBag.Title = "LogIn";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>Log In Page</p>
+<h2>LogIn</h2>
 
-<form action="/action_page.php">
-    <label for="uname">Username:</label>
-    <input type="text" id="uname" name="uname"><br><br>
-    <label for="pword">Password:</label>
-    <input type="text" id="pword" name="pword"><br><br>
-    <input type="submit" value="Log In">
-</form>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
 
-<a href="https://localhost:44334/Home/Index">Back Home</a>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
