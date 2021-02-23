@@ -33,12 +33,6 @@ namespace MTGDeckBuilder.Controllers
 
             return View();
         }
-        public ActionResult Info()
-        {
-            ViewBag.Message = "Information regarding rules and other info.";
-
-            return View();
-        }
 
         public ActionResult SignUp()
         {
