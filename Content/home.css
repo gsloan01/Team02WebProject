@@ -31,10 +31,9 @@
     max-width: 90%;
    
 }
-.welcome_container{
-    background-color: white;
+.welcome_container {
+    background-color: #071013;
     height: 1200px;
-    padding:30px;
+    padding: 30px;
     margin: 32px;
-    
 }
