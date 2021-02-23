@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - ฅ^•ﻌ•^ฅ</title>
     @Styles.Render("~/Content/css")
+    
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -16,20 +17,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navIcon" href="@Url.Action("Index")">
-                    <img class="navIconImg" src="~/Content/Image/LOGO2.png" style="width:150px; height: 150px;" />
+                <a href="@Url.Action("Index")">
+                    <img class="navIconImg" src="~/Content/Image/LOGO2.png" style="width:75px; height: 75px;" />
                 </a>
                 
                
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="margin: 10px;">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Deck", "Deck", "Home")</li>
                     <li>@Html.ActionLink("Library", "Library", "Home")</li>
                     <li>@Html.ActionLink("Info", "Info", "Home")</li>
                 </ul>
+                <a  href="@Url.Action("LogIn")">Log In</a> / <a  href="@Url.Action("SignUp")">Sign Up</a>
             </div>
         </div>
     </div>
