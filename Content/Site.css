@@ -26,20 +26,3 @@ textarea {
 slideshow-container {
 
 }
-
-.how-right img {
-    float: left;
-    margin-right: 20px;
-    vertical-align: middle;
-}
-
-.how-left img {
-    float: right;
-    margin-right: 20px;
-    vertical-align: middle;
-}
-
-.righttext{
-    float: right;
-    margin-right: 100px;
-}
