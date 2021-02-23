@@ -7,38 +7,29 @@
 
 <h2>LogIn</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
 
-    <div class="form-horizontal">
-        <h4>User</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
-                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "badge badge-danger" })
-            </div>
-        </div>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "badge badge-danger" })
-            </div>
-        </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Register" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
 
+    </dl>
+</div>
 <p>
-    @Html.ActionLink("Home Page", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>
