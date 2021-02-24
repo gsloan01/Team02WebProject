@@ -31,18 +31,7 @@
                     <li>@Html.ActionLink("Library", "Library", "Home")</li>
                     <li>@Html.ActionLink("Info", "Info", "Home")</li>
                 </ul>
-
-                @if (Session["Id"] != null)
-                {
-                    <p style="display: inline; color: white">Hello, @Session["Username"].ToString()</p>
-                    <a href="@Url.Action("SignOut")">Log Out</a>
-                }
-                else
-                {
-
-                    <a href="@Url.Action("LogIn")">Log In</a> <p style="display:inline; color:white">/</p> <a href="@Url.Action("SignUp")">Sign Up</a>
-                }
-
+                <a  href="@Url.Action("LogIn")">Log In</a> / <a  href="@Url.Action("SignUp")">Sign Up</a>
             </div>
         </div>
     </div>
