@@ -35,5 +35,17 @@
     background-color: #071013;
     height: 1200px;
     padding: 30px;
-    margin: 32px;
+    margin: 26px;
+}
+.info_box {
+    background-color: #071013;
+    height: 500px;
+    padding: 30px;
+    margin: 26px;
+}
+.header_info {
+    background-color: #2D3142;
+    color: black;
+    margin: 15px;
+    padding: 12px;
 }
