@@ -147,6 +147,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\home.css" />
+    <Content Include="Content\Image\LOGO2.png" />
+    <Content Include="Models\Images\79449de3ab2d49756d54be57bdc8cede.jpg" />
+    <Content Include="Models\Images\9uYMig.jpg" />
+    <Content Include="Models\Images\b671c9a004358bb71fc38531850c8426.png" />
+    <Content Include="Models\Images\Battle.jpg" />
+    <Content Include="Models\Images\Cogwork.jpg" />
+    <Content Include="Models\Images\dominaria.jpg" />
+    <Content Include="Models\Images\image-asset.jpeg" />
+    <Content Include="Models\Images\Magic-Gathering-Amonkhet-Merciless-Eternal.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -154,6 +164,8 @@
     <Content Include="Models\Images\23b01c1e3037bd2e5edf222232869b7c.jpg" />
     <Content Include="Models\Images\hm.png" />
     <Content Include="Models\Images\LOGO2.png" />
+    <Content Include="Models\Images\Sram.jpg" />
+    <Content Include="Models\Images\Strixhaven-Header.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
