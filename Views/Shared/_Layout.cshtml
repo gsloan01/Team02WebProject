@@ -31,7 +31,6 @@
                     <li>@Html.ActionLink("Library", "Library", "Home")</li>
                     <li>@Html.ActionLink("Info", "Info", "Home")</li>
                 </ul>
-
                 @if (Session["Id"] != null)
                 {
                     <p style="display: inline; color: white">Hello, @Session["Username"].ToString()</p>

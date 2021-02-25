@@ -46,7 +46,7 @@
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="DB_A6FB48_MTGDeckBuilderDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB_A6FB48_MTGDeckBuilderDBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
@@ -55,7 +55,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB_A6FB48_MTGDeckBuilderDBModelStoreContainer" CdmEntityContainer="DB_A6FB48_MTGDeckBuilderDBEntities">
+        <EntityContainerMapping StorageEntityContainer="DB_A6FB48_MTGDeckBuilderDBModelStoreContainer" CdmEntityContainer="DB_A6FB48_MTGDeckBuilderDBEntities2">
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="DB_A6FB48_MTGDeckBuilderDBModel.Account">
               <MappingFragment StoreEntitySet="Account">

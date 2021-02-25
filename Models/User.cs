@@ -11,9 +11,6 @@ namespace MTGDeckBuilder.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
-    using System.Web.Mvc;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,13 +18,13 @@ namespace MTGDeckBuilder.Models
     public partial class User
     {
         public int Id { get; set; }
-        
+
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string Username { get; set; }
 
         [Required]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}$", ErrorMessage ="Password Must Contain At Least One Uppercase, Lowercase, and a Number. Password Must be 8-20 Characters Long")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,30}$", ErrorMessage ="Password Must Contain at least 1 Capital and Lowercase letter and at least one Number")]
         public string Password { get; set; }
 
         [NotMapped]
