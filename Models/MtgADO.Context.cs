@@ -13,10 +13,10 @@ namespace MTGDeckBuilder.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB_A6FB48_MTGDeckBuilderDBEntities : DbContext
+    public partial class DB_A6FB48_MTGDeckBuilderDBEntities2 : DbContext
     {
-        public DB_A6FB48_MTGDeckBuilderDBEntities()
-            : base("name=DB_A6FB48_MTGDeckBuilderDBEntities")
+        public DB_A6FB48_MTGDeckBuilderDBEntities2()
+            : base("name=DB_A6FB48_MTGDeckBuilderDBEntities2")
         {
         }
     
