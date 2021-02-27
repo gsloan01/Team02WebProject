@@ -7,6 +7,7 @@
       <Diagram DiagramId="6ec3302c30414ab8b333c8a8c83f042d" Name="Diagram1">
         <EntityTypeShape EntityType="DB_A6FB48_MTGDeckBuilderDBModel.Account" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A6FB48_MTGDeckBuilderDBModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A6FB48_MTGDeckBuilderDBModel.DeckTB" Width="1.5" PointX="4.875" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

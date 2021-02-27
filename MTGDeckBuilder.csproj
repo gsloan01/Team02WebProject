@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -152,6 +152,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DeckTBsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +163,10 @@
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\DB_Entities.cs" />
     <Compile Include="Models\Deck.cs" />
+    <Compile Include="Models\DeckRepo.cs" />
+    <Compile Include="Models\DeckTB.cs">
+      <DependentUpon>MtgADO.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Library.cs" />
     <Compile Include="Models\MtgADO.Context.cs">
       <AutoGen>True</AutoGen>
@@ -256,6 +261,11 @@
     <Content Include="Views\Home\SignUp.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\SignOut.cshtml" />
+    <Content Include="Views\DeckTBs\Create.cshtml" />
+    <Content Include="Views\DeckTBs\Delete.cshtml" />
+    <Content Include="Views\DeckTBs\Details.cshtml" />
+    <Content Include="Views\DeckTBs\Edit.cshtml" />
+    <Content Include="Views\DeckTBs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

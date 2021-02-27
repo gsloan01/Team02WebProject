@@ -14,23 +14,13 @@ namespace MTGDeckBuilder.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class User
+    public partial class DeckTB
     {
-        public int Id { get; set; }
-
+        public int DeckId { get; set; }
+        public int PlayerId { get; set; }
         [Required]
-        [StringLength(50, MinimumLength = 3)]
-        public string Username { get; set; }
-
-        [Required]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,30}$", ErrorMessage = "Password Must Contain at least 1 Capital and Lowercase letter and at least one Number")]
-        public string Password { get; set; }
-
-        [NotMapped]
-        [Required]
-        [System.ComponentModel.DataAnnotations.Compare("Password")]
-        public string ConfirmPassword { get; set; }
-
+        [StringLength(50)]
+        public string DeckName { get; set; }
     }
 
 }
