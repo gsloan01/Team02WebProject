@@ -213,6 +213,8 @@
     <Content Include="Models\Images\23b01c1e3037bd2e5edf222232869b7c.jpg" />
     <Content Include="Models\Images\hm.png" />
     <Content Include="Models\Images\LOGO2.png" />
+    <Content Include="Models\Images\magic-the-gathering-trading-card-game-cards-3.JPG" />
+    <Content Include="Models\Images\phage.jpg" />
     <Content Include="Models\Images\Sram.jpg" />
     <Content Include="Models\Images\Strixhaven-Header.jpg" />
     <Content Include="Models\MtgADO.Context.tt">
