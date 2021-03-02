@@ -158,17 +158,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs">
-      <DependentUpon>MtgADO.tt</DependentUpon>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardTB.cs">
-      <DependentUpon>MtgADO.tt</DependentUpon>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB_Entities.cs" />
     <Compile Include="Models\Deck.cs" />
     <Compile Include="Models\DeckRepo.cs" />
     <Compile Include="Models\DeckTB.cs">
-      <DependentUpon>MtgADO.tt</DependentUpon>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Library.cs" />
     <Compile Include="Models\MtgADO.Context.cs">
@@ -186,8 +186,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MtgADO.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MtgADO2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MtgADO2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MtgADO2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MtgADO2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>MtgADO.tt</DependentUpon>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -227,6 +242,16 @@
       <DependentUpon>MtgADO.edmx</DependentUpon>
       <LastGenOutput>MtgADO.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\MtgADO2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
+      <LastGenOutput>MtgADO2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MtgADO2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
+      <LastGenOutput>MtgADO2.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\MtgADO.edmx">
@@ -235,6 +260,13 @@
     </EntityDeploy>
     <Content Include="Models\MtgADO.edmx.diagram">
       <DependentUpon>MtgADO.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\MtgADO2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MtgADO2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MtgADO2.edmx.diagram">
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

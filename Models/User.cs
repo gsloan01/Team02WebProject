@@ -16,8 +16,13 @@ namespace MTGDeckBuilder.Models
 
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.DeckTBs = new HashSet<DeckTB>();
+        }
+    
         public int Id { get; set; }
-
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string Username { get; set; }
@@ -31,6 +36,8 @@ namespace MTGDeckBuilder.Models
         [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string ConfirmPassword { get; set; }
 
-    }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeckTB> DeckTBs { get; set; }
+    }
 }

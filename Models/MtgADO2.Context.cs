@@ -13,10 +13,10 @@ namespace MTGDeckBuilder.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB_A6FB48_MTGDeckBuilderDBEntities2 : DbContext
+    public partial class DB_A6FB48_MTGDeckBuilderDBEntities3 : DbContext
     {
-        public DB_A6FB48_MTGDeckBuilderDBEntities2()
-            : base("name=DB_A6FB48_MTGDeckBuilderDBEntities2")
+        public DB_A6FB48_MTGDeckBuilderDBEntities3()
+            : base("name=DB_A6FB48_MTGDeckBuilderDBEntities3")
         {
         }
     
@@ -26,8 +26,8 @@ namespace MTGDeckBuilder.Models
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<DeckTB> DeckTBs { get; set; }
         public virtual DbSet<CardTB> CardTBs { get; set; }
+        public virtual DbSet<DeckTB> DeckTBs { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
