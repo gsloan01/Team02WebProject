@@ -161,6 +161,9 @@
       <DependentUpon>MtgADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\CardTB.cs">
+      <DependentUpon>MtgADO.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DB_Entities.cs" />
     <Compile Include="Models\Deck.cs" />
     <Compile Include="Models\DeckRepo.cs" />

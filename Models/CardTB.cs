@@ -11,15 +11,11 @@ namespace MTGDeckBuilder.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class DeckTB
+    
+    public partial class CardTB
     {
-        public int DeckId { get; set; }
-        public int PlayerId { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string DeckName { get; set; }
+        public int CardId { get; set; }
+        public Nullable<int> DeckId { get; set; }
+        public string CardValue { get; set; }
     }
-
 }

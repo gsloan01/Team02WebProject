@@ -28,5 +28,6 @@ namespace MTGDeckBuilder.Models
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<DeckTB> DeckTBs { get; set; }
+        public virtual DbSet<CardTB> CardTBs { get; set; }
     }
 }
