@@ -11,7 +11,7 @@ namespace MTGDeckBuilder.Controllers
 {
     public class HomeController : Controller
     {
-        private DB_Entities db = new DB_Entities();
+        //private DB_Entities db = new DB_Entities();
 
         public ActionResult Index()
         {
@@ -25,9 +25,9 @@ namespace MTGDeckBuilder.Controllers
             return View();
         }
 
-        public ActionResult Deck()
+        public ActionResult Card()
         {
-            ViewBag.Message = "Decks of cards.";
+            ViewBag.Message = "Cards.";
 
             return View();
         }
@@ -39,6 +39,13 @@ namespace MTGDeckBuilder.Controllers
             return View();
         }
 
+        public ActionResult DeckBuilder()
+        {
+            ViewBag.Message = "Deck Builder";
+
+            return View();
+        }
+
         public ActionResult SignUp()
         {
             ViewBag.Message = "Sign up.";
@@ -46,7 +53,7 @@ namespace MTGDeckBuilder.Controllers
             return View();
         }
 
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SignUp(User user)
         {
@@ -72,7 +79,7 @@ namespace MTGDeckBuilder.Controllers
             return View();
 
 
-        }
+        }*/
 
 
         public ActionResult LogIn()
@@ -83,7 +90,7 @@ namespace MTGDeckBuilder.Controllers
         }
 
 
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(string username, string password)
         {
@@ -107,7 +114,7 @@ namespace MTGDeckBuilder.Controllers
                 }
             }
             return View();
-        }
+        }*/
 
         public ActionResult SignOut()
         {
