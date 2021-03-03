@@ -69,7 +69,8 @@ namespace MTGDeckBuilder.Controllers
                     ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
                 }
             }
-            foreach(Card card in cards)
+            foreach (Card card in cards)
+
             {
                 Console.WriteLine(card.ToString());
             }
@@ -150,3 +151,4 @@ namespace MTGDeckBuilder.Controllers
         }
     }
 }
+

@@ -46,10 +46,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Flurl.3.0.1\lib\net461\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Flurl.Http.3.0.1\lib\net461\Flurl.Http.dll</HintPath>
     </Reference>
     <Reference Include="Flurl, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Flurl.3.0.1\lib\net461\Flurl.dll</HintPath>
@@ -190,16 +196,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\APIHelpController.cs" />
+
+    <Compile Include="Controllers\DeckTBsController.cs" />
+
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs">
-      <DependentUpon>MtgADO.tt</DependentUpon>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\CardTB.cs">
+      <DependentUpon>MtgADO2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DB_Entities.cs" />
     <Compile Include="Models\Deck.cs" />
+    <Compile Include="Models\DeckRepo.cs" />
+    <Compile Include="Models\DeckTB.cs">
+      <DependentUpon>MtgADO2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Library.cs" />
     <Compile Include="Models\MtgADO.Context.cs">
       <AutoGen>True</AutoGen>
@@ -216,8 +232,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MtgADO.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MtgADO2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MtgADO2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MtgADO2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MtgADO2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>MtgADO.tt</DependentUpon>
+      <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -257,6 +288,16 @@
       <DependentUpon>MtgADO.edmx</DependentUpon>
       <LastGenOutput>MtgADO.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\MtgADO2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
+      <LastGenOutput>MtgADO2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MtgADO2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
+      <LastGenOutput>MtgADO2.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\MtgADO.edmx">
@@ -265,6 +306,13 @@
     </EntityDeploy>
     <Content Include="Models\MtgADO.edmx.diagram">
       <DependentUpon>MtgADO.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\MtgADO2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MtgADO2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MtgADO2.edmx.diagram">
+      <DependentUpon>MtgADO2.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -296,6 +344,13 @@
     <Content Include="Views\Home\SignUp.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\SignOut.cshtml" />
+
+    <Content Include="Views\DeckTBs\Create.cshtml" />
+    <Content Include="Views\DeckTBs\Delete.cshtml" />
+    <Content Include="Views\DeckTBs\Details.cshtml" />
+    <Content Include="Views\DeckTBs\Edit.cshtml" />
+    <Content Include="Views\DeckTBs\Index.cshtml" />
+
     <Content Include="Views\APIHelp\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

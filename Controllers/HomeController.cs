@@ -58,6 +58,7 @@ namespace MTGDeckBuilder.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 var check = db.Users.FirstOrDefault(s => s.Username == user.Username);
                 if (check == null)
                 {
