@@ -70,6 +70,7 @@ namespace MTGDeckBuilder.Controllers
                 }
             }
             foreach (Card card in cards)
+
             {
                 Console.WriteLine(card.ToString());
             }
@@ -150,3 +151,4 @@ namespace MTGDeckBuilder.Controllers
         }
     }
 }
+
