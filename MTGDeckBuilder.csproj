@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\APIHelpController.cs" />
+    <Compile Include="Controllers\CustomCardTBsController.cs" />
     <Compile Include="Controllers\DeckTBsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,10 @@
     </Compile>
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardTB.cs">
+      <DependentUpon>MtgADO2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomCardRepo.cs" />
+    <Compile Include="Models\CustomCardTB.cs">
       <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB_Entities.cs" />
@@ -342,6 +347,12 @@
     <Content Include="Views\DeckTBs\Edit.cshtml" />
     <Content Include="Views\DeckTBs\Index.cshtml" />
     <Content Include="Views\APIHelp\Index.cshtml" />
+    <Content Include="Views\CustomCardTBs\Create.cshtml" />
+    <Content Include="Views\CustomCardTBs\Delete.cshtml" />
+    <Content Include="Views\CustomCardTBs\Details.cshtml" />
+    <Content Include="Views\CustomCardTBs\Edit.cshtml" />
+    <Content Include="Views\CustomCardTBs\Index.cshtml" />
+    <Content Include="Views\CustomCardTBs\YourCards.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
