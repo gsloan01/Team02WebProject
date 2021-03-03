@@ -57,12 +57,6 @@
     <Reference Include="Flurl.Http, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Flurl.Http.3.0.1\lib\net461\Flurl.Http.dll</HintPath>
     </Reference>
-    <Reference Include="Flurl, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Flurl.3.0.1\lib\net461\Flurl.dll</HintPath>
-    </Reference>
-    <Reference Include="Flurl.Http, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Flurl.Http.3.0.1\lib\net461\Flurl.Http.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -196,9 +190,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\APIHelpController.cs" />
-
+    <Compile Include="Controllers\CustomCardTBsController.cs" />
     <Compile Include="Controllers\DeckTBsController.cs" />
-
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,6 +201,10 @@
     </Compile>
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardTB.cs">
+      <DependentUpon>MtgADO2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomCardRepo.cs" />
+    <Compile Include="Models\CustomCardTB.cs">
       <DependentUpon>MtgADO2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB_Entities.cs" />
@@ -344,18 +341,21 @@
     <Content Include="Views\Home\SignUp.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\SignOut.cshtml" />
-
     <Content Include="Views\DeckTBs\Create.cshtml" />
     <Content Include="Views\DeckTBs\Delete.cshtml" />
     <Content Include="Views\DeckTBs\Details.cshtml" />
     <Content Include="Views\DeckTBs\Edit.cshtml" />
     <Content Include="Views\DeckTBs\Index.cshtml" />
-
     <Content Include="Views\APIHelp\Index.cshtml" />
+    <Content Include="Views\CustomCardTBs\Create.cshtml" />
+    <Content Include="Views\CustomCardTBs\Delete.cshtml" />
+    <Content Include="Views\CustomCardTBs\Details.cshtml" />
+    <Content Include="Views\CustomCardTBs\Edit.cshtml" />
+    <Content Include="Views\CustomCardTBs\Index.cshtml" />
+    <Content Include="Views\CustomCardTBs\YourCards.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MtgApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
