@@ -15,12 +15,25 @@ namespace MTGDeckBuilder.Controllers
         private DB_A6FB48_MTGDeckBuilderDBEntities3 db = new DB_A6FB48_MTGDeckBuilderDBEntities3();
 
         // GET: CustomCardTBs
-        public ActionResult Index()
+        public ActionResult Index(string name)
         {
-            return View(db.CustomCardTBs.ToList());
+            IEnumerable<CustomCardTB> cardList = new List<CustomCardTB>();
+
+            var repo = new CustomCardRepo();
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                cardList = repo.SearchCustomCard(name);
+            }
+            else
+            {
+                cardList = db.CustomCardTBs.ToList();
+            }
+            return View(cardList);
+            //return View(db.CustomCardTBs.ToList());
         }
 
-        public ActionResult YourCards()
+        public ActionResult YourCards(string name)
         {
             IEnumerable<CustomCardTB> cardList = new List<CustomCardTB>();
             cardList = db.CustomCardTBs.ToList(); ;
@@ -30,6 +43,10 @@ namespace MTGDeckBuilder.Controllers
             if (Session["Id"] != null)
             {
                 cardList = repo.GetCustomCards(Int32.Parse(Session["Id"].ToString()));
+                if(!string.IsNullOrEmpty(name))
+                {
+                    cardList = repo.SearchUserCustomCard(name, Int32.Parse(Session["Id"].ToString()));
+                }
                 return View(cardList);
             }
             else
