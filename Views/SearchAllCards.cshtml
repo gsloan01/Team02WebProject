@@ -1,0 +1,18 @@
+﻿@using (Html.BeginForm("Index", "CustomCardTBs", FormMethod.Get))
+{
+    <b>Search</b>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Label("Name")
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBox("name", string.Empty, new { @type = "text", @class = "form-control" })
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Search" />
+}

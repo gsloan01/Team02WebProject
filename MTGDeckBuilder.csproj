@@ -353,6 +353,8 @@
     <Content Include="Views\CustomCardTBs\Edit.cshtml" />
     <Content Include="Views\CustomCardTBs\Index.cshtml" />
     <Content Include="Views\CustomCardTBs\YourCards.cshtml" />
+    <Content Include="Views\SearchAllCards.cshtml" />
+    <Content Include="Views\SearchUserCards.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
