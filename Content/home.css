@@ -53,3 +53,23 @@
     margin: 10px;
 
 }
+.table_row{
+    border-color: yellow;
+    border-bottom:solid;
+}
+
+.t_header {
+    text-align: center;
+    border: white;
+    border-style: solid;
+    font-size: 25px;
+    padding: 15px;
+}
+.t_data {
+    border-left: white;
+    border-right: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+   
+}
