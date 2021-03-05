@@ -33,7 +33,7 @@
 }
 .welcome_container {
     background-color: #071013;
-    height: 1200px;
+    height: 1000px;
     padding: 30px;
     margin: 26px;
 }
@@ -48,4 +48,35 @@
     color: black;
     margin: 15px;
     padding: 12px;
+}
+.log_sign_links{
+    margin: 10px;
+
+}
+.table_row{
+    border-color: yellow;
+    border-bottom:solid;
+}
+
+.t_header {
+    text-align: center;
+    border: white;
+    border-style: solid;
+    font-size: 25px;
+    padding: 15px;
+}
+.t_data {
+    border-left: white;
+    border-right: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+   
+}
+.search_container {
+    background-color: #071013;
+    padding: 25px;
+    margin: 31px;
+    height: 238px;
+    width: 1135px;
 }

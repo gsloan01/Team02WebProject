@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MTGDeckBuilder.Models.CustomCardTB>
+
+@{
+    ViewBag.Title = "YourCards";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Cards</h2>
+
+<p>
+    @Html.Partial("../SearchUserCards")
+</p>
+@if (Session["Id"] != null)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tough)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayerId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Image)"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Power)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tough)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerId)
+                </td>
+            </tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+        }
+
+    </table>
+}
+else
+{
+    <h1>LOGIN FIRST</h1>
+}

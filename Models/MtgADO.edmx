@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_A6FB48_MTGDeckBuilderDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CardTB">
+          <Key>
+            <PropertyRef Name="CardId" />
+          </Key>
+          <Property Name="CardId" Type="int" Nullable="false" />
+          <Property Name="DeckId" Type="int" />
+          <Property Name="CardValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DeckTB">
+          <Key>
+            <PropertyRef Name="DeckId" />
+          </Key>
+          <Property Name="DeckId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerId" Type="int" Nullable="false" />
+          <Property Name="DeckName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DeckTB_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="DeckTB" Type="Self.DeckTB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DeckTB">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A6FB48_MTGDeckBuilderDBModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardTB" EntityType="Self.CardTB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeckTB" EntityType="Self.DeckTB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DeckTB_User" Association="Self.FK_DeckTB_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="DeckTB" EntitySet="DeckTB" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A6FB48_MTGDeckBuilderDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DeckTBs" Relationship="DB_A6FB48_MTGDeckBuilderDBModel.FK_DeckTB_User" FromRole="User" ToRole="DeckTB" />
+        </EntityType>
+        <EntityContainer Name="DB_A6FB48_MTGDeckBuilderDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="DeckTBs" EntityType="DB_A6FB48_MTGDeckBuilderDBModel.DeckTB" />
+          <EntitySet Name="CardTBs" EntityType="DB_A6FB48_MTGDeckBuilderDBModel.CardTB" />
+          <AssociationSet Name="FK_DeckTB_User" Association="DB_A6FB48_MTGDeckBuilderDBModel.FK_DeckTB_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DeckTB" EntitySet="DeckTBs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DeckTB">
+          <Key>
+            <PropertyRef Name="DeckId" />
+          </Key>
+          <Property Name="DeckId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerId" Type="Int32" Nullable="false" />
+          <Property Name="DeckName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="DB_A6FB48_MTGDeckBuilderDBModel.FK_DeckTB_User" FromRole="DeckTB" ToRole="User" />
+        </EntityType>
+        <EntityType Name="CardTB">
+          <Key>
+            <PropertyRef Name="CardId" />
+          </Key>
+          <Property Name="CardId" Type="Int32" Nullable="false" />
+          <Property Name="DeckId" Type="Int32" />
+          <Property Name="CardValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_DeckTB_User">
+          <End Type="DB_A6FB48_MTGDeckBuilderDBModel.User" Role="User" Multiplicity="1" />
+          <End Type="DB_A6FB48_MTGDeckBuilderDBModel.DeckTB" Role="DeckTB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DeckTB">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A6FB48_MTGDeckBuilderDBModelStoreContainer" CdmEntityContainer="DB_A6FB48_MTGDeckBuilderDBEntities2">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="DB_A6FB48_MTGDeckBuilderDBModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DB_A6FB48_MTGDeckBuilderDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeckTBs">
+            <EntityTypeMapping TypeName="DB_A6FB48_MTGDeckBuilderDBModel.DeckTB">
+              <MappingFragment StoreEntitySet="DeckTB">
+                <ScalarProperty Name="DeckName" ColumnName="DeckName" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="DeckId" ColumnName="DeckId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CardTBs">
+            <EntityTypeMapping TypeName="DB_A6FB48_MTGDeckBuilderDBModel.CardTB">
+              <MappingFragment StoreEntitySet="CardTB">
+                <ScalarProperty Name="CardValue" ColumnName="CardValue" />
+                <ScalarProperty Name="DeckId" ColumnName="DeckId" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

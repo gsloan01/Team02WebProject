@@ -27,20 +27,19 @@
                 <ul class="nav navbar-nav" style="margin: 10px;">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Card", "Card", "Home")</li>
+                    <li>@Html.ActionLink("Deck", "Index", "DeckTBs")</li>
                     <li>@Html.ActionLink("Library", "Library", "Home")</li>
-                    <li>@Html.ActionLink("DeckBuilder", "DeckBuilder", "Home")</li>
+                    
                 </ul>
-
                 @if (Session["Id"] != null)
                 {
                     <p style="display: inline; color: white">Hello, @Session["Username"].ToString()</p>
-                    <a href="@Url.Action("SignOut")">Log Out</a>
+                    <a>@Html.ActionLink("SignOut", "SignOut", "Home")</a>
                 }
                 else
                 {
 
-                    <a href="@Url.Action("LogIn")">Log In</a> <p style="display:inline; color:white">/</p> <a href="@Url.Action("SignUp")">Sign Up</a>
+                    <a>@Html.ActionLink("LogIn", "LogIn", "Home")</a> <p style="display:inline; color:white">/</p> <a>@Html.ActionLink("SignUp", "SignUp", "Home")</a>
                 }
 
             </div>

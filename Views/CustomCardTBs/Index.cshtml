@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MTGDeckBuilder.Models.CustomCardTB>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="search_container" >
+    <p>
+        @Html.Partial("../SearchAllCards")
+    </p>
+</div>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="welcome_container">
+    <tr class="table_row">
+        <th class="t_header">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="t_header">
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th th class="t_header">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th class="t_header">
+            @Html.DisplayNameFor(model => model.Power)
+        </th>
+        <th class="t_header">
+            @Html.DisplayNameFor(model => model.Tough)
+        </th>
+        <th class="t_header">
+            @Html.DisplayNameFor(model => model.PlayerId)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="table_row">
+        <td class="t_data" style="font-size: 25px;">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td class="t_data">
+            <img src="@Html.DisplayFor(modelItem => item.Image)" />
+        </td>
+        <td class="t_data">
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td class="t_data" style="font-size: 35px;">
+            @Html.DisplayFor(modelItem => item.Power)
+        </td>
+        <td class="t_data" style="font-size: 35px;">
+            @Html.DisplayFor(modelItem => item.Tough)
+        </td>
+        <td class="t_data" style="font-size: 35px;">
+            @Html.DisplayFor(modelItem => item.PlayerId)
+        </td>
+@*        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>*@
+    </tr>
+}
+
+</table>
