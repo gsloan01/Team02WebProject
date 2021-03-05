@@ -73,3 +73,10 @@
     font-size: 15px;
    
 }
+.search_container {
+    background-color: #071013;
+    padding: 25px;
+    margin: 31px;
+    height: 238px;
+    width: 1135px;
+}
