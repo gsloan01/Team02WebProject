@@ -65,6 +65,8 @@ namespace MTGDeckBuilder.Controllers
         {
             if (ModelState.IsValid)
             {
+                deckTB.PlayerId = Int32.Parse(Session["Id"].ToString());
+
                 db.DeckTBs.Add(deckTB);
                 db.SaveChanges();
                 return RedirectToAction("Index");

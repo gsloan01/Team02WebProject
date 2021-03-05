@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="@Url.Action("Index")">
+                <a href="@Url.Action("Index", "Home")">
                     <img class="navIconImg" src="~/Content/Image/LOGO2.png" style="width:75px; height: 75px;" />
                 </a>
                 
@@ -28,7 +28,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Deck", "Index", "DeckTBs")</li>
-                    <li>@Html.ActionLink("Library", "Library", "Home")</li>
+                    <li>@Html.ActionLink("Cards", "Index", "CustomCardTBs")</li>
                     
                 </ul>
                 @if (Session["Id"] != null)
