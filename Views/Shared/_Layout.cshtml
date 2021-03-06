@@ -45,13 +45,16 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - ฅ^•ﻌ•^ฅ</p>
-        </footer>
-    </div>
+    <div class="bg">
+        <div class="container body-content">
+            @RenderBody()
+        
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ฅ^•ﻌ•^ฅ</p>
+            </footer>
+        </div>
+     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

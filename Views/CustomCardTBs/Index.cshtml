@@ -13,7 +13,9 @@
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
-<table class="welcome_container">
+<div style="overflow:auto; height: 800px;">
+
+<table class="table_container">
     <tr class="table_row">
         <th class="t_header">
             @Html.DisplayNameFor(model => model.Name)
@@ -42,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td class="t_data">
-            <img src="@Html.DisplayFor(modelItem => item.Image)" style="box-shadow: 0px 0px 6px #666; max-height: 400px; max-width: 400px;"/>
+            <img src="@Html.DisplayFor(modelItem => item.Image)" style="box-shadow: 0px 0px 6px #666; max-height: 350px; max-width: 400px;"/>
         </td>
         <td class="t_data">
             @Html.DisplayFor(modelItem => item.Description)
@@ -65,3 +67,4 @@
 }
 
 </table>
+</div>

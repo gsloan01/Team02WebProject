@@ -80,3 +80,21 @@
     height: 238px;
     width: 1135px;
 }
+.img-box {
+   
+}
+.bg {
+    background-image: url("../Models/Images/9uYMig.jpg");
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+    height: 102%;
+}
+.table_container {
+    background-color: #071013;
+    height: 1000px;
+    padding: 30px;
+    margin: 26px;
+}
