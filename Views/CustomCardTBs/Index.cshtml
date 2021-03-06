@@ -5,52 +5,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<div class="search_container" style="border: #cf5234; border-style:inset;" >
+    <p>
+        @Html.Partial("../SearchAllCards")
+    </p>
+</div>
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
-<table class="table">
-    <tr>
-        <th>
+<table class="welcome_container">
+    <tr class="table_row">
+        <th class="t_header">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th class="t_header">
             @Html.DisplayNameFor(model => model.Image)
         </th>
-        <th>
+        <th th class="t_header">
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        <th class="t_header">
             @Html.DisplayNameFor(model => model.Power)
         </th>
-        <th>
+        <th class="t_header">
             @Html.DisplayNameFor(model => model.Tough)
         </th>
-        <th>
+        <th class="t_header">
             @Html.DisplayNameFor(model => model.PlayerId)
         </th>
-        <th></th>
+        
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr class="table_row">
+        <td class="t_data" style="font-size: 25px;">
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
-            <img src="@Html.DisplayFor(modelItem => item.Image)" />
+        <td class="t_data">
+            <img src="@Html.DisplayFor(modelItem => item.Image)" style="box-shadow: 0px 0px 6px #666; max-height: 400px; max-width: 400px;"/>
         </td>
-        <td>
+        <td class="t_data">
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
+        <td class="t_data" style="font-size: 35px;">
             @Html.DisplayFor(modelItem => item.Power)
         </td>
-        <td>
+        <td class="t_data" style="font-size: 35px;">
             @Html.DisplayFor(modelItem => item.Tough)
         </td>
-        <td>
+        <td class="t_data" style="font-size: 35px;">
             @Html.DisplayFor(modelItem => item.PlayerId)
         </td>
 @*        <td>

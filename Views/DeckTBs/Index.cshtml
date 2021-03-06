@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
 @if (Session["Id"] != null)
 {
+<div class="welcome_container">
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -43,8 +43,14 @@
 
 </table>
 
+</div>
+
 }
 else
 {
-    <h1>LOGIN FIRST</h1>
+    <div style=" width: 185px; background-color: #071013; padding: 10px">
+
+        <h1>LOGIN FIRST</h1>
+
+    </div>
 }
