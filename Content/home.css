@@ -53,25 +53,25 @@
     margin: 10px;
 
 }
-.table_row{
-    border-color: yellow;
-    border-bottom:solid;
+.table_row {
+    border-color: #cf5234;
+    border-bottom: #cf5234;
+    border-style: inset;
 }
 
 .t_header {
     text-align: center;
-    border: white;
+    border: #cf5234;
     border-style: solid;
     font-size: 25px;
     padding: 15px;
 }
 .t_data {
-    border-left: white;
-    border-right: white;
+    border-left: crimson;
+    border-right: crimson;
     text-align: center;
     padding: 10px;
     font-size: 15px;
-   
 }
 .search_container {
     background-color: #071013;

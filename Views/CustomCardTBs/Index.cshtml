@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="search_container" >
+<div class="search_container" style="border: #cf5234; border-style:inset;" >
     <p>
         @Html.Partial("../SearchAllCards")
     </p>
@@ -42,7 +42,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td class="t_data">
-            <img src="@Html.DisplayFor(modelItem => item.Image)" style="border: crimson; border-style: inset;"/>
+            <img src="@Html.DisplayFor(modelItem => item.Image)" style="box-shadow: 0px 0px 6px #666;"/>
         </td>
         <td class="t_data">
             @Html.DisplayFor(modelItem => item.Description)
