@@ -15,7 +15,7 @@ namespace MTGDeckBuilder.Models
     public partial class CardsInDeckTB
     {
         public int DeckId { get; set; }
-        public string CardId { get; set; }
+        public int CardId { get; set; }
         public int Id { get; set; }
     }
 }

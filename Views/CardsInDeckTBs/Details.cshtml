@@ -11,9 +11,25 @@
     <h4>CardsInDeckTB</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeckId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeckId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardId)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back To Decks", "Index", "DeckTBs", null, null)
 </p>

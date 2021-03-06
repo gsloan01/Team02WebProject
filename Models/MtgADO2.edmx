@@ -19,7 +19,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DeckId" Type="int" Nullable="false" />
-          <Property Name="CardId" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CardId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="CardTB">
           <Key>
@@ -160,7 +160,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="DeckId" Type="Int32" Nullable="false" />
-          <Property Name="CardId" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CardId" Type="Int32" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>

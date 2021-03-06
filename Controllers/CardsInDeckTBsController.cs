@@ -17,10 +17,10 @@ namespace MTGDeckBuilder.Controllers
         // GET: CardsInDeckTBs
         public ActionResult Index(int deckId/*, int cardId*/)
         {
-            
+
             //IEnumerable<DeckTB> deck = new List<DeckTB>();
             IEnumerable<CustomCardTB> cardList = new List<CustomCardTB>();
-            
+
 
             var repo = new CardsInDeckRepo();
 
@@ -28,6 +28,7 @@ namespace MTGDeckBuilder.Controllers
 
             return View(cardList);
         }
+
 
         // GET: CardsInDeckTBs/Details/5
         public ActionResult Details(int? id)
@@ -93,7 +94,7 @@ namespace MTGDeckBuilder.Controllers
             {
                 db.Entry(cardsInDeckTB).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "DeckTBs");
             }
             return View(cardsInDeckTB);
         }
@@ -121,7 +122,7 @@ namespace MTGDeckBuilder.Controllers
             CardsInDeckTB cardsInDeckTB = db.CardsInDeckTBs.Find(id);
             db.CardsInDeckTBs.Remove(cardsInDeckTB);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "DeckTBs");
         }
 
         protected override void Dispose(bool disposing)
