@@ -29,6 +29,6 @@ namespace MTGDeckBuilder.Models
         [Required(ErrorMessage = "A URL Image Link is Required")]
         public string Image { get; set; }
         public int PlayerId { get; set; }
-    }
 
+    }
 }
