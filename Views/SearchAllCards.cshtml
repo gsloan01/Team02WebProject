@@ -1,12 +1,12 @@
 ﻿@using (Html.BeginForm("Index", "CustomCardTBs", FormMethod.Get))
 {
-    <b>Search</b>
+    <b style="font-size:30px;">Search</b>
     <table class="table">
-        <tr>
+        @*<tr>
             <th>
                 @Html.Label("Name")
             </th>
-        </tr>
+        </tr>*@
         <tr>
             <td>
                 @Html.TextBox("name", string.Empty, new { @type = "text", @class = "form-control" })

@@ -86,6 +86,7 @@ namespace MTGDeckBuilder.Controllers
             if (ModelState.IsValid)
             {
                 customCardTB.PlayerId = Int32.Parse(Session["Id"].ToString());
+
                 db.CustomCardTBs.Add(customCardTB);
                 db.SaveChanges();
                 return RedirectToAction("YourCards");

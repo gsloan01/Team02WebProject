@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="@Url.Action("Index")">
+                <a href="@Url.Action("Index", "Home")">
                     <img class="navIconImg" src="~/Content/Image/LOGO2.png" style="width:75px; height: 75px;" />
                 </a>
                 
@@ -28,9 +28,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Deck", "Index", "DeckTBs")</li>
-                    <li>@Html.ActionLink("Library", "Library", "Home")</li>
-                    <li>@Html.ActionLink("Info", "Info", "Home")</li>
-                    <li>@Html.ActionLink("help me", "Index", "APIHelp")</li>
+                    <li>@Html.ActionLink("Cards", "Index", "CustomCardTBs")</li>
+                    
                 </ul>
                 @if (Session["Id"] != null)
                 {
@@ -40,19 +39,22 @@
                 else
                 {
 
-                    <a>@Html.ActionLink("LogIn", "LogIn", "Home")</a> <p style="display:inline; color:white">/</p> <a>@Html.ActionLink("SignUp", "SignUp", "Home")</a>
+                    <a>@Html.ActionLink("LogIn", "LogIn", "Home")</a> <p style="display:inline; color:white">|</p> <a>@Html.ActionLink("SignUp", "SignUp", "Home")</a>
                 }
 
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - ฅ^•ﻌ•^ฅ</p>
-        </footer>
-    </div>
+    <div class="bg">
+        <div class="container body-content">
+            @RenderBody()
+        
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ฅ^•ﻌ•^ฅ</p>
+            </footer>
+        </div>
+     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
