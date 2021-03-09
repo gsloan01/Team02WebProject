@@ -6,61 +6,74 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Cards In Deck</h2>
 
-<p>
-    @Html.ActionLink("Add Card To Deck", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Power)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tough)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerId)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+<div class="search_container" style="border: #cf5234; border-style:inset; padding: 30px">
+    <p>
+        @Html.Partial("../SearchUserCards")
+    </p>
+    <p>
+        @Html.ActionLink("Add Card To Deck", "Create")
+    </p>
+</div>
+<div style="overflow:auto; height: 800px; margin: 60px; ">
+    @if (Session["Id"] != null)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <img src="@Html.DisplayFor(modelItem => item.Image)" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Power)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tough)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerId)
-            </td>
-        </tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </td>
-    }
+        <table class="table_container" style="margin:10px; width: 996px;">
+            <tr class="table_row">
+                <th class="t_header">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="t_header">
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th th class="t_header">
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th class="t_header">
+                    @Html.DisplayNameFor(model => model.Power)
+                </th>
+                <th class="t_header">
+                    @Html.DisplayNameFor(model => model.Tough)
+                </th>
+                <th class="t_header">
+                    @Html.DisplayNameFor(model => model.PlayerId)
+                </th>
 
-</table>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="table_row">
+                    <td class="t_data" style="font-size: 25px;">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="t_data">
+                        <img src="@Html.DisplayFor(modelItem => item.Image)" style="box-shadow: 0px 0px 6px #666; max-height: 350px; max-width: 400px;" />
+                    </td>
+                    <td class="t_data">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td class="t_data" style="font-size: 35px;">
+                        @Html.DisplayFor(modelItem => item.Power)
+                    </td>
+                    <td class="t_data" style="font-size: 35px;">
+                        @Html.DisplayFor(modelItem => item.Tough)
+                    </td>
+                    <td class="t_data" style="font-size: 35px;">
+                        @Html.DisplayFor(modelItem => item.PlayerId)
+                    </td>
+                    @*        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                        </td>*@
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <h1>LOGIN FIRST</h1>
+    }
+</div>

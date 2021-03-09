@@ -5,14 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="search_container" style="border: #cf5234; border-style:inset;" >
+<div class="search_container" style="border: #cf5234; border-style:inset;">
     <p>
         @Html.Partial("../SearchAllCards")
     </p>
+
+    <p>
+
+        @Html.ActionLink("Create Card", "Create", "CustomCardTBs")|
+        @Html.ActionLink("Back to List", "Index", "CustomCardTBs")
+    </p>
+
 </div>
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <div style="overflow:auto; height: 800px;">
 
 <table class="table_container">
