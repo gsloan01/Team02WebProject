@@ -15,6 +15,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.DeckId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PlayerId)
         </th>
         <th>
@@ -25,19 +28,23 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeckName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.DeckId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.DeckId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.DeckId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DeckId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PlayerId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DeckName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.DeckId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.DeckId }) |
+        @Html.ActionLink("View Cards", "Index", "CardsInDeckTBs", new { deckId = item.DeckId}, null) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.DeckId })
+    </td>
+</tr>
     }
  
 

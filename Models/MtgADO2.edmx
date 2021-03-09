@@ -13,6 +13,14 @@
           <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="CardsInDeckTB">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeckId" Type="int" Nullable="false" />
+          <Property Name="CardId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="CardTB">
           <Key>
             <PropertyRef Name="CardId" />
@@ -63,6 +71,7 @@
         </Association>
         <EntityContainer Name="DB_A6FB48_MTGDeckBuilderDBModel1StoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardsInDeckTB" EntityType="Self.CardsInDeckTB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CardTB" EntityType="Self.CardTB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomCardTB" EntityType="Self.CustomCardTB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DeckTB" EntityType="Self.DeckTB" Schema="dbo" store:Type="Tables" />
@@ -132,6 +141,7 @@
             <End Role="DeckTB" EntitySet="DeckTBs" />
           </AssociationSet>
           <EntitySet Name="CustomCardTBs" EntityType="DB_A6FB48_MTGDeckBuilderDBModel1.CustomCardTB" />
+          <EntitySet Name="CardsInDeckTBs" EntityType="DB_A6FB48_MTGDeckBuilderDBModel1.CardsInDeckTB" />
         </EntityContainer>
         <EntityType Name="CustomCardTB">
           <Key>
@@ -144,6 +154,14 @@
           <Property Name="Tough" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PlayerId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CardsInDeckTB">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="DeckId" Type="Int32" Nullable="false" />
+          <Property Name="CardId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -197,6 +215,15 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CardsInDeckTBs">
+            <EntityTypeMapping TypeName="DB_A6FB48_MTGDeckBuilderDBModel1.CardsInDeckTB">
+              <MappingFragment StoreEntitySet="CardsInDeckTB">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="DeckId" ColumnName="DeckId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

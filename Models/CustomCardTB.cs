@@ -30,5 +30,4 @@ namespace MTGDeckBuilder.Models
         public string Image { get; set; }
         public int PlayerId { get; set; }
     }
-
 }

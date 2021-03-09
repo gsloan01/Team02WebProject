@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="DB_A6FB48_MTGDeckBuilderDBModel1.User" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="DB_A6FB48_MTGDeckBuilderDBModel1.FK_DeckTB_User" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DB_A6FB48_MTGDeckBuilderDBModel1.CustomCardTB" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_A6FB48_MTGDeckBuilderDBModel1.CardsInDeckTB" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
