@@ -10,126 +10,119 @@ using MTGDeckBuilder.Models;
 
 namespace MTGDeckBuilder.Controllers
 {
-    public class DeckTBsController : Controller
+    public class CardsInDeckTBsController : Controller
     {
         private DB_A6FB48_MTGDeckBuilderDBEntities3 db = new DB_A6FB48_MTGDeckBuilderDBEntities3();
-        // GET: DeckTBs
-        public ActionResult Index()
+
+        // GET: CardsInDeckTBs
+        public ActionResult Index(int deckId/*, int cardId*/)
         {
-            IEnumerable<DeckTB> deckList = new List<DeckTB>();
-            deckList = db.DeckTBs.ToList(); ;
-            var repo = new DeckRepo();
+
+            //IEnumerable<DeckTB> deck = new List<DeckTB>();
+            IEnumerable<CustomCardTB> cardList = new List<CustomCardTB>();
 
 
-            if (Session["Id"] != null)
-            {
-                deckList = repo.GetDecks(Int32.Parse(Session["Id"].ToString()));
-                return View(deckList);
-            }
-            else
-            {
-                return View();
-            }
-            
-   
-            //return View(db.DeckTBs.ToList());
+            var repo = new CardsInDeckRepo();
+
+            cardList = repo.GetCardsInDeck(deckId);
+
+            return View(cardList);
         }
 
-        // GET: DeckTBs/Details/5
+
+        // GET: CardsInDeckTBs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DeckTB deckTB = db.DeckTBs.Find(id);
-            if (deckTB == null)
+            CardsInDeckTB cardsInDeckTB = db.CardsInDeckTBs.Find(id);
+            if (cardsInDeckTB == null)
             {
                 return HttpNotFound();
             }
-            return View(deckTB);
+            return View(cardsInDeckTB);
         }
 
-        // GET: DeckTBs/Create
+        // GET: CardsInDeckTBs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: DeckTBs/Create
+        // POST: CardsInDeckTBs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DeckId,PlayerId,DeckName")] DeckTB deckTB)
+        public ActionResult Create([Bind(Include = "Id,DeckId,CardId")] CardsInDeckTB cardsInDeckTB)
         {
             if (ModelState.IsValid)
             {
-                deckTB.PlayerId = Int32.Parse(Session["Id"].ToString());
-
-                db.DeckTBs.Add(deckTB);
+                db.CardsInDeckTBs.Add(cardsInDeckTB);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "DeckTBs");
             }
 
-            return View(deckTB);
+            return View(cardsInDeckTB);
         }
 
-        // GET: DeckTBs/Edit/5
+        // GET: CardsInDeckTBs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DeckTB deckTB = db.DeckTBs.Find(id);
-            if (deckTB == null)
+            CardsInDeckTB cardsInDeckTB = db.CardsInDeckTBs.Find(id);
+            if (cardsInDeckTB == null)
             {
                 return HttpNotFound();
             }
-            return View(deckTB);
+            return View(cardsInDeckTB);
         }
 
-        // POST: DeckTBs/Edit/5
+        // POST: CardsInDeckTBs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DeckId,PlayerId,DeckName")] DeckTB deckTB)
+        public ActionResult Edit([Bind(Include = "Id,DeckId,CardId")] CardsInDeckTB cardsInDeckTB)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(deckTB).State = EntityState.Modified;
+                db.Entry(cardsInDeckTB).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "DeckTBs");
             }
-            return View(deckTB);
+            return View(cardsInDeckTB);
         }
 
-        // GET: DeckTBs/Delete/5
+        // GET: CardsInDeckTBs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DeckTB deckTB = db.DeckTBs.Find(id);
-            if (deckTB == null)
+            CardsInDeckTB cardsInDeckTB = db.CardsInDeckTBs.Find(id);
+            if (cardsInDeckTB == null)
             {
                 return HttpNotFound();
             }
-            return View(deckTB);
+            return View(cardsInDeckTB);
         }
 
-        // POST: DeckTBs/Delete/5
+        // POST: CardsInDeckTBs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DeckTB deckTB = db.DeckTBs.Find(id);
-            db.DeckTBs.Remove(deckTB);
+            CardsInDeckTB cardsInDeckTB = db.CardsInDeckTBs.Find(id);
+            db.CardsInDeckTBs.Remove(cardsInDeckTB);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "DeckTBs");
         }
 
         protected override void Dispose(bool disposing)
