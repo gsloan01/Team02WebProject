@@ -53,3 +53,48 @@
     margin: 10px;
 
 }
+.table_row {
+    border-color: #cf5234;
+    border-bottom: #cf5234;
+    border-style: inset;
+}
+
+.t_header {
+    text-align: center;
+    border: #cf5234;
+    border-style: solid;
+    font-size: 25px;
+    padding: 15px;
+}
+.t_data {
+    border-left: crimson;
+    border-right: crimson;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+.search_container {
+    background-color: #071013;
+    padding: 25px;
+    margin: 31px;
+    height: 238px;
+    width: 1135px;
+}
+.img-box {
+   
+}
+.bg {
+    background-image: url("../Models/Images/9uYMig.jpg");
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+    height: 102%;
+}
+.table_container {
+    background-color: #071013;
+    height: 1000px;
+    padding: 30px;
+    margin: 26px;
+}
